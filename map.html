@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <title>Map, Points, and Route</title>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Map, Points, and Route</h3>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+        var office = {lat: 48.4685177, lng: -123.3188412};
+        var home = {lat: 48.4590188, lng: -123.502869};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11,
+            center: office
+        });
+        var marker1 = new google.maps.Marker({
+            position: office,
+            map: map
+        });
+        var marker2 = new google.maps.Marker({
+            position: home,
+            map: map
+        });  
+        var route = new google.maps.Polyline({
+        path: google.maps.geometry.encoding.decodePath('{swfH|sxpVwEyPK}@?iBD{BEq@S_BDk@FWJQz@?hAPvAVb@B|@@nACz@KpB_@^At@Ot@QGe@Y}DWuDc@mDm@kCu@uBk@iA{AkC}@wAGEQGiD_GsFmJcQyZ}@cBy@mB_A}Cc@uBYuBYgEC_CHiEXcDV}Ad@{Bd@{Af@uAj@mArFeLbCyF\\aA^uAj@kCZgCRkCHgC?aCGoDKsBy@iPKcCIwD?yADuCXyEZsFNeDDsCAgCSwGUqG_AkV_@gK}@kUkA}ZQiDYwD]kDy@oGu@qHSmCWgGGqE?cEFkJ@uGCuDMkKQaFIiOMaJ?uAFmBL{ARaBRiAVgAx@gC`DcItGkPtAoDt@uCh@iDfAaJx@qGDUW_@u@w@iAmAmFwFyAcBgD_Ds@k@WKSScA{AoDiG_AaBaBwC{@cBi@_Bc@aBg@gDDu@Ac@GwACoBW}LKiEaAwNUgDk@gJo@{KYyCiAiJWgCe@oHw@yJOkAuAqTgDmi@@e@O}CQiDo@cK_@aG?k@UaASsCu@eMQwAYkDi@iDw@kIm@{IeA_RE_B?aAB}@JiAlAaMLcAR_APs@^_ARa@tBwCdGmIt@iAZu@\\aBJ}ADqR?gGHu@?uIC_P@uLEyH@}S@_IAyADy@FgGB_G'),
+        strokeColor: "#FF0000",
+        strokeOpacity: 0.5,
+        strokeWeight: 5,
+        map: map
+        });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=geometry&callback=initMap"></script>
+  </body>
+</html>
